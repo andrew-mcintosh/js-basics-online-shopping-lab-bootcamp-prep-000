@@ -23,7 +23,7 @@ function viewCart() {
  console.log('Your shopping cart is empty.')
   }
 	  var itemPrices = [];
-  for (var i = 0; i < l; i++) {
+  for (var i = 0; i < cart.length; i++) {
     var itemPrice = cart[i];
     var item = Object.keys(itemPrice)[0];
     var price = itemPrice[item];
@@ -37,7 +37,7 @@ function viewCart() {
       itemPrices = itemPrices.join(' and ');
       break;
     default:
-      itemPrices[l-1] = 'and '.concat(itemPrices[l-1]);
+      itemPrices[cart.length-1] = 'and '.concat(itemPrices[cart.length-1]);
       itemPrices = itemPrices.join(', ');
   }
 
