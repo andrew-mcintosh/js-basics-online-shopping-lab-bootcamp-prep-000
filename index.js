@@ -23,10 +23,10 @@ function viewCart() {
  console.log('Your shopping cart is empty.')
   }
 	  var items = [];
-	  		for (var i = 0; i < cart.length; i++) {
-	    		var items = cart[i];
-	    		var item = Object.keys(items)[0];
-	    		var price = items[item];
+	  		for (let i = 0; i < cart.length; i++) {
+	    		let items = cart[i];
+	    		let item = Object.keys(items)[0];
+	    		let price = items[item];
 
 	    items.push(`${item} at \$${price}`);
 	  }
