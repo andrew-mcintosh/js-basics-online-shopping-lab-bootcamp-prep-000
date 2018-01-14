@@ -22,25 +22,26 @@ function viewCart() {
  if (cart.length === 0) {
  console.log('Your shopping cart is empty.')
   }
-	  var items = [];
-	  		for (let i = 0; i < cart.length; i++) {
-	    		let items = cart[i];
-	    		let item = Object.keys(items)[0];
-	    		let price = items[item];
+	  var itemPrices = [];
+  for (var i = 0; i < l; i++) {
+    var itemPrice = cart[i];
+    var item = Object.keys(itemPrice)[0];
+    var price = itemPrice[item];
+    itemPrices.push(`${item} at \$${price}`);
+  }
 
-	    items.push(`${item} at \$${price}`);
-	  }
-		  switch(items.length) {
-		    case 1:
-		      break;
-		    case 2:
-		      items = items.join(' and ');
-		      break;
-		    default:
-		      items[cart.length-1] = 'and '.concat(items[cart.length-1]);
-		      items = items.join(', ');
-		  }
-  console.log(`In your cart, you have ${items}.`)
+  switch(itemPrices.length) {
+    case 1:
+      break;
+    case 2:
+      itemPrices = itemPrices.join(' and ');
+      break;
+    default:
+      itemPrices[l-1] = 'and '.concat(itemPrices[l-1]);
+      itemPrices = itemPrices.join(', ');
+  }
+
+  console.log(`In your cart, you have ${itemPrices}.`);
 }
 
 function total() {
